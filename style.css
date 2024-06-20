@@ -1,0 +1,456 @@
+/* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+   
+   
+    
+  
+}
+
+.container {
+    width: 80%;
+
+    overflow: hidden;
+    margin-top: 1rem;
+    
+}
+
+
+header {
+    background: #f8f9fa; /* Header arka plan rengi */
+    color: #333;
+    padding-top: 20px;
+    min-height: 70px;
+    border-bottom: #007bff 3px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+header a {
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+header ul li {
+    display: inline;
+    float: left;
+    margin-left: 5%;
+    padding-top: 20px;
+}
+
+header ul li a {
+    font-size: 1.2em;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+header ul li:hover {
+    border-bottom: 3px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+header ul li a:hover {
+    color: #ffcc00;
+}
+
+main {
+    padding: 3rem 5rem;
+    min-height: 200px;
+    
+}
+
+section {
+    margin-bottom: 20px;
+ 
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+   
+}
+
+section h2 {
+    border-bottom: 3px solid #333333;
+    color: #333333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+section p {
+    color: #666666;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-50px);
+}
+
+.modal.show .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+
+
+.cv-sample {
+    text-align: center;
+}
+
+.cv-section {
+    margin-bottom: 15px;
+}
+
+.cv-section label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.cv-section input[type="text"],
+.cv-section input[type="email"],
+.cv-section input[type="tel"],
+.cv-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.cv-section textarea {
+    resize: vertical;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn.close {
+    background-color: #f44336;
+}
+
+.btn.download {
+    background-color: #008CBA;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.job-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.job-card p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.job-card .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.job-card .btn:hover {
+    background-color: #0056b3;
+}
+
+.job-card img {
+    width: 320px;
+    height: 300px;
+    margin-left: 2rem;
+    border-radius: 10px;
+}
+
+/* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #28a745; /* Yeşil arka plan rengi */
+    color: #fff;
+    padding-top: 20px;
+    min-height: 70px;
+    border-bottom: #007bff 3px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+header ul li {
+    display: inline-block;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header ul li a:hover {
+    color: #ffc107;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 20px;
+   
+}
+
+.resource-section {
+    margin-bottom:1rem;
+   
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.resource-section:hover {
+    transform: translateY(-5px);
+}
+
+.resource-section h2 {
+    border-bottom: 3px solid #333333;
+    color: #333333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.resource-section p {
+    color: #666666;
+}
+
+.resource-section .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resource-section .btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #28a745; /* Yeşil arka plan rengi */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+   
+    height: 1.7rem;
+}
+
+.interview-guide{
+    margin: 3rem;
+}
+
+/* Responsive düzenleme */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.video-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 4rem;
+    margin-left: 12rem;
+    width: 70%;
+  
+}
+
+.video{
+    height: 500px;
+    width: 100%;
+}
+.video-container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.video-container h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.video-container p {
+    color: #666;
+}
+</style>
+
+
